@@ -1,0 +1,20 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: P@ssw0rd
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    cap_drop:
+      - NET_RAW
+    volumes:
+      - "./script.sql:/script.sql"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        /opt/mssql/bin/sqlservr &
+        sleep 30
+        /opt/mssql-tools/bin/sqlcmd -U sa -P P@ssw0rd -l 30 -e -i /script.sql
+        sleep infinity
