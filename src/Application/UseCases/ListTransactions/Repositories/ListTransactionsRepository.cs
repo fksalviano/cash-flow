@@ -13,18 +13,18 @@ public class ListTransactionsRepository : IListTransactionsRepository
 
     public ListTransactionsRepository(ILogger<ListTransactionsRepository> logger, IDbConnection connection)
     {
-        _connection = connection;
         _logger = logger;
+        _connection = connection;
     }
 
     public async Task<IEnumerable<Transaction>?> GetTransactionsAsync(CancellationToken cancellationToken)
     {
         try
         {
-            var sql = @"select Id, Date, Description, Type, Value 
+            var sql = @"select [Id], [Date], [Description], [Type], [Value]
                         from [dbo].[Transaction]";
 
-            return await _connection.QueryAsync<Transaction>(sql);            
+            return await _connection.QueryAsync<Transaction>(sql);
         }
         catch (Exception ex)
         {

@@ -13,8 +13,8 @@ public class SaveTransactionRepository : ISaveTransactionRepository
 
     public SaveTransactionRepository(ILogger<SaveTransactionRepository> logger, IDbConnection connection)
     {
-        _connection = connection;
         _logger = logger;
+        _connection = connection;
     }
 
     public async Task<bool> SaveAsync(Transaction transaction, CancellationToken cancellationToken)

@@ -12,7 +12,7 @@ Architecture implemented to isolate the Application Common Domain from each Use 
 - **ListTransactions**:
     List all registered Transactions.
 
-- **GetBalanceByDay**:
+- **GetDailyBalance**:
     Get consolidated balance by day.
 
 ### Worker
@@ -27,6 +27,9 @@ The project uses Dependence Injection to build the container services and uses s
 
 - **Unit Tests**:
     Tests for each class and methods independently.
+
+- **Integrated Tests**:
+    Tests for each endpoint runnig the application (**necessary to run docker-compose before run the tests**).
 
 ## Configuration
 
