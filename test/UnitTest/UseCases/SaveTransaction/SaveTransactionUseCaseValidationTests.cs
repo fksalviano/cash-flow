@@ -20,7 +20,7 @@ public class SaveTransactionUseCaseValidationTests
     public SaveTransactionUseCaseValidationTests()
     {
         var mocker = new AutoMocker();
-        
+                
         _useCase = mocker.GetMock<ISaveTransactionUseCase>();
         _outputPort = mocker.GetMock<ISaveTransactionOutputPort>();
 

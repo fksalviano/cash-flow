@@ -22,7 +22,6 @@ public class SaveTransactionControllerTests
     public SaveTransactionControllerTests()
     {
         var mocker = new AutoMocker();
-
         _useCase = mocker.GetMock<ISaveTransactionUseCase>();
         _sut = mocker.CreateInstance<SaveTransactionController>();
         _outputPort = (_sut as ISaveTransactionOutputPort);

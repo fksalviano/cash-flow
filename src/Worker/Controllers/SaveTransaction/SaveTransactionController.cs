@@ -7,7 +7,7 @@ using static Application.Commons.Utils.ObjectResultUtils;
 namespace Worker.Controllers.SaveTransaction;
 
 [ApiController]
-[Route("Transaction")]
+[Route("transaction")]
 public class SaveTransactionController : ControllerBase, ISaveTransactionOutputPort
 {
     private readonly ISaveTransactionUseCase _useCase;

@@ -21,7 +21,6 @@ public class SaveTransactionRepositoryTests
     public SaveTransactionRepositoryTests()
     {
         var mocker = new AutoMocker();
-
         _connection = mocker.GetMock<IDbConnection>();
         _sut = mocker.CreateInstance<SaveTransactionRepository>();
     }
