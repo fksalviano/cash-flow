@@ -1,6 +1,6 @@
 using System.Data;
-using Application.UseCases.GetDailyBalance.Domain;
 using Application.UseCases.GetDailyBalance.Abstractions;
+using Application.UseCases.GetDailyBalance.Domain;
 using Dapper;
 using Microsoft.Extensions.Logging;
 
@@ -21,22 +21,15 @@ public class GetDailyBalanceRepository : IGetDailyBalanceRepository
     {
         try
         {
-            var sql = @"select 
+            var sql = @"select
                             cast(cast([Date] as DATE) as DATETIME) as [Date],
-                            sum(case when [Type] = 'C' then [Value] else [Value] * -1 end) as [DayBalance]
+                            sum(case when [Type] = 'C' then [Value] else [Value] * -1 end) as [DayBalance],
+                            0.00 as [CurrentBalance]
                         from [dbo].[Transaction]
                         group by cast(cast([Date] as DATE) as DATETIME)
                         order by 1";
 
-            decimal currentBalance = 0;
-
-            return await _connection.QueryAsync<DailyBalance, DailyBalance, DailyBalance>(sql, 
-                (daily, _) => 
-                {
-                    currentBalance += daily.DayBalance;
-                    return new DailyBalance(daily.Date, daily.DayBalance, currentBalance);
-                }, 
-                splitOn: "DayBalance");
+            return await _connection.QueryAsync<DailyBalance>(sql);
         }
         catch (Exception ex)
         {

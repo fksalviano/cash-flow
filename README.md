@@ -64,16 +64,10 @@ cd cash-flow
 dotnet build
 ```
 
-#### Up Docker Database Container (Start the Database and Run SQL Scripts)
+#### Up Docker Database Container (Starts the Database and Run SQL Scripts)
 
 ```bash
 docker-compose up -d
-```
-
-#### Run the project
-
-```bash
-dotnet run --project src/Worker
 ```
 
 #### Run tests
@@ -82,6 +76,17 @@ dotnet run --project src/Worker
 dotnet test
 ```
 
+#### Run the project
+
+```bash
+dotnet run --project src/Worker
+```
+
+#### Open Swagger API documentation
+- http://localhost:5210/swagger
+
+
+![API Swagger Doc](swagger.png?raw=true "API Swagger Doc")
 
 ## Packages
 

@@ -32,7 +32,10 @@ public class GetDailyBalanceUseCase : IGetDailyBalanceUseCase
             _outputPort.NotFound();
             return;
         }
-        
+
+        decimal initialBalance = 0;
+        balances.UpdateCurrentBalances(initialBalance);
+
         var output = balances.ToOutput();
         _outputPort.Ok(output);
     }
