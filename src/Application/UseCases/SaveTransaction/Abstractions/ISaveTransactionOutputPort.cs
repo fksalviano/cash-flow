@@ -1,4 +1,4 @@
-using Application.Commons.Domain;
+using Domain.Validation;
 using Application.UseCases.SaveTransaction.Ports;
 
 namespace Application.UseCases.SaveTransaction.Abstractions;

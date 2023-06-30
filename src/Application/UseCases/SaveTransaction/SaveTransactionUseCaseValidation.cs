@@ -1,4 +1,4 @@
-using Application.Commons.Extensions;
+using Domain.Validation;
 using Application.UseCases.SaveTransaction.Abstractions;
 using Application.UseCases.SaveTransaction.Ports;
 using FluentValidation;

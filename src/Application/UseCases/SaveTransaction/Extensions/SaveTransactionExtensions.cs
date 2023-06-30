@@ -1,4 +1,4 @@
-using Application.Domain;
+using Domain.Models;
 using Application.UseCases.SaveTransaction.Ports;
 
 namespace Application.UseCases.SaveTransaction.Extensions;
