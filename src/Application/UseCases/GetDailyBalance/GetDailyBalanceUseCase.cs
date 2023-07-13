@@ -1,18 +1,19 @@
 using Application.UseCases.GetDailyBalance.Abstractions;
-using Application.UseCases.GetDailyBalance.Domain;
+using Domain.Models;
 using Application.UseCases.GetDailyBalance.Extensions;
+using Infra.Repositories.Abstractions;
 
 namespace Application.UseCases.GetDailyBalance;
 
 public class GetDailyBalanceUseCase : IGetDailyBalanceUseCase
 {
-    private readonly IGetDailyBalanceRepository _repository;
+    private readonly ITransactionRepository _repository;
     private IGetDailyBalanceOutputPort _outputPort = null!;
 
     public void SetOutputPort(IGetDailyBalanceOutputPort outputPort) =>
         _outputPort = outputPort;
 
-    public GetDailyBalanceUseCase(IGetDailyBalanceRepository repository)
+    public GetDailyBalanceUseCase(ITransactionRepository repository)
     {
         _repository = repository;
     }

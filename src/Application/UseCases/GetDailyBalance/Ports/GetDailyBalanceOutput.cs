@@ -1,4 +1,4 @@
-using Application.UseCases.GetDailyBalance.Domain;
+using Domain.Models;
 
 namespace Application.UseCases.GetDailyBalance.Ports;
 

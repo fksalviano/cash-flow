@@ -1,4 +1,4 @@
-using Application.Domain;
+using Domain.Models;
 using Application.UseCases.ListTransactions.Ports;
 
 namespace Application.UseCases.ListTransactions.Extensions;

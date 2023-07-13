@@ -2,7 +2,6 @@
 
 .Net Core API using Clean Architecture and Vertical Slice
 
-Architecture implemented to isolate the Application Common Domain from each Use Case Domain.
 
 ### Use Cases
 
@@ -15,7 +14,7 @@ Architecture implemented to isolate the Application Common Domain from each Use 
 - **GetDailyBalance**:
     Get consolidated balance by day.
 
-### Worker
+### API
 
 The API micro-service with the Controllers and endpoints.
 
@@ -79,7 +78,7 @@ dotnet test
 #### Run the project
 
 ```bash
-dotnet run --project src/Worker
+dotnet run --project src/API
 ```
 
 #### Open Swagger API documentation

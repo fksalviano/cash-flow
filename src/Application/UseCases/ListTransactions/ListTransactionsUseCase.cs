@@ -1,17 +1,18 @@
 using Application.UseCases.ListTransactions.Abstractions;
 using Application.UseCases.ListTransactions.Extensions;
+using Infra.Repositories.Abstractions;
 
 namespace Application.UseCases.ListTransactions;
 
 public class ListTransactionsUseCase : IListTransactionsUseCase
 {
-    private readonly IListTransactionsRepository _repository;    
+    private readonly ITransactionRepository _repository;    
     private IListTransactionsOutputPort _outputPort = null!;    
 
     public void SetOutputPort(IListTransactionsOutputPort outputPort) =>
         _outputPort = outputPort;
 
-    public ListTransactionsUseCase(IListTransactionsRepository repository)
+    public ListTransactionsUseCase(ITransactionRepository repository)
     {
         _repository = repository;
     }
