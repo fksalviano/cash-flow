@@ -2,7 +2,6 @@
 
 .Net Core API using Clean Architecture and Vertical Slice
 
-Architecture implemented to isolate the Application Common Domain from each Use Case Domain.
 
 ### Use Cases
 
