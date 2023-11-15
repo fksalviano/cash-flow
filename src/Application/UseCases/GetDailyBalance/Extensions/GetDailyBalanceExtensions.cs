@@ -10,7 +10,7 @@ public static class GetDailyBalanceExtensions
 
     public static void UpdateCurrentBalances(this IEnumerable<DailyBalance> balances, decimal initialBalance)
     {
-        decimal currentBalance = initialBalance;
+        var currentBalance = initialBalance;
         
         foreach(var balance in balances)
         {

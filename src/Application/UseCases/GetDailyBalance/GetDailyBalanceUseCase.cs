@@ -33,7 +33,7 @@ public class GetDailyBalanceUseCase : IGetDailyBalanceUseCase
             return;
         }
 
-        decimal initialBalance = 0;
+        var initialBalance = 0;
         balances.UpdateCurrentBalances(initialBalance);
 
         var output = balances.ToOutput();
